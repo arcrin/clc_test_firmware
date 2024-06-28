@@ -1,0 +1,25 @@
+[
+    {
+        "name": "ARM GCC 10.3.1",
+        "compilers": {
+            "CC": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe",
+            "CXX": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe"
+        }
+
+        
+    },
+    {
+        "name": "ARM GCC 13.2.1",
+        "compilers": {
+            "CC": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/arm-none-eabi-gcc.exe",
+            "CXX": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/arm-none-eabi-g++.exe"
+        }
+    },
+    {
+        "name": "GNU GCC 13.2.0",
+        "compilers": {
+            "CC": "C:/msys64/ucrt64/bin/gcc.exe",
+            "CXX": "C:/msys64/ucrt64/bin/g++.exe"
+        }
+    }
+]

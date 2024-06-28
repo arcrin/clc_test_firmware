@@ -1,0 +1,93 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "STM32 Discovery Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/cpp_stm32_embedded.elf",
+            "configFiles": [
+                "interface/stlink-v2-1.cfg",
+                "board/stm32f4discovery.cfg"
+            ],
+            "serverpath": "C:/xpack-openocd-0.12.0-1-win32-x64/xpack-openocd-0.12.0-1/bin/openocd.exe", // Specify the path to the OpenOCD executable
+            "serverArgs": [
+                "-s", "C:/xpack-openocd-0.12.0-1-win32-x64/xpack-openocd-0.12.0-1/openocd/scripts/scripts",
+                "-c", "init; reset init"
+            ],
+            "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+            "svdFile": "${workspaceRoot}/hal/stm32f407xx/stm32f407.svd",
+            "preLaunchTask": "Build with CMake",
+        },
+
+        {
+            "name": "CLC Debug - work",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/cpp_stm32_embedded.elf",
+            "configFiles": [
+                "cortex_debug_minimal.cfg"
+            ],
+            "serverpath": "C:/Projects/Delta/tj_software/interface/interface/OpenOCD/windows/openocd.exe", 
+            "serverArgs": [
+                "-s", "C:/Projects/Delta/tj_software/interface/interface/OpenOCD/common/scripts",
+                "-f", "swd_ft.cfg",
+                "-c", "ftdi channel 0; transport select swd",
+                "-s", "C:/Projects/Delta/tj_software/interface/interface/OpenOCD",
+                "-f", "stm32f1x_no_working_area.cfg",
+                "-c", "adapter speed 1000; init; reset init"
+            ],
+            "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+            "svdFile": "${workspaceRoot}/hal/stm32f103xx/stm32f103.svd",
+            "preLaunchTask": "Build with CMake",
+        },
+
+        {
+            "name": "CLC Debug - home",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/cpp_stm32_embedded.elf",
+            "configFiles": [
+                "swd_ft.cfg",
+                "stm32f1x_no_working_area.cfg"
+            ],
+            "serverpath": "F:/Project/Delta/interface/interface/OpenOCD/windows/openocd.exe", 
+            "serverArgs": [
+                "-s", "F:/Project/Delta/interface/interface/OpenOCD/common/scripts",
+                "-s", "F:/Project/Delta/interface/interface/OpenOCD",
+                "-c", "ftdi_channel 0; transport select swd",
+                "-c", "init; reset init"
+            ],
+            "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+            "svdFile": "${workspaceRoot}/hal/stm32f103xx/stm32f103.svd",
+            "preLaunchTask": "Build with CMake",
+        },
+        
+        {
+            "name":"GNU GCC Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/MyCppProject.exe",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe"
+        }
+    ]
+}

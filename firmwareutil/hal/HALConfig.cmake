@@ -35,7 +35,7 @@ foreach(DIR ${HAL_DIRS})
     list(APPEND HAL_INC_DIRS ${HAL_PATH}/src/${DIR})
     list(APPEND HAL_SRC_GLOBS ${HAL_PATH}/src/${DIR}/*.c)
     # Add MCU flags (e.g. HAL_STM32x, HAL_STM32Fx, HAL_STM32F1x, HAL_STM32F103xB)
-    list(APPEND HAL_DEFINES HAL${DIR})
+    list(APPEND HAL_DEFINES HAL_${DIR})
 endforeach()
 
 

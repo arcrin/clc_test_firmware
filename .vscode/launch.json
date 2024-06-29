@@ -31,7 +31,7 @@
             "request": "launch",
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
-            "executable": "./build/cpp_stm32_embedded.elf",
+            "executable": "./build/CLC_STM32F103xB/CLC_STM32F103xB.elf",
             "configFiles": [
                 "cortex_debug_minimal.cfg"
             ],
@@ -45,7 +45,7 @@
                 "-c", "adapter speed 1000; init; reset init"
             ],
             "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
-            "svdFile": "${workspaceRoot}/hal/stm32f103xx/stm32f103.svd",
+            "svdFile": "${workspaceRoot}/firmwareutil/hal/svd/cortex-m4-scb.svd",
             "preLaunchTask": "Build with CMake",
         },
 

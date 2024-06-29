@@ -1,2 +1,0 @@
-C:/Projects/Delta/embedded/clc_test_firmware/build/CMakeFiles/edit_cache.dir
-C:/Projects/Delta/embedded/clc_test_firmware/build/CMakeFiles/rebuild_cache.dir

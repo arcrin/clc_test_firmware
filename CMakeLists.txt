@@ -11,16 +11,16 @@ project(clc_test ASM C CXX)
 set(HAL_PATH firmwareutil/hal)
 
 set(TARGETS
-    CLC:STM32F103V8
+    CLC:STM32F103xB
 )
 
 # NOTE: define F_CPU
 # I believe this is being used for systick related code. Disable for now and enble as needed
 # The clock speed of the STM32F103V8 is might be different
 
-# add_compile_definitions(
-#     F_CPU=48000000
-# )
+add_compile_definitions(
+    F_CPU=72000000
+)
 
 include_directories(
     src
@@ -35,10 +35,10 @@ file(GLOB APP_FILES
 )
 
 # Compiler and linker flags
-#SET(DEBUG_OPTIMIZATION true)
+SET(DEBUG_OPTIMIZATION true)
 #SET(TRACE_MALLOC true)
 if(${DEBUG_OPTIMIZATION})
-    set(OPTIMIZATION_FLAGS "-g3 -O1")
+    set(OPTIMIZATION_FLAGS "-g3 -O0")
     set(LINKER_SCRIPT_PREFIX Debug_)
 else()
     set(OPTIMIZATION_FLAGS "-Os -flto")
@@ -48,6 +48,8 @@ endif()
 SET(COMMON_FLAGS "${OPTIMIZATION_FLAGS} -Wall -Wundef -Wdouble-promotion -Wno-unknown-pragmas -fstack-usage -Wstack-usage=1024 -g3 -mthumb -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wuninitialized -Wmissing-declarations -Wlogical-op -Wfloat-equal -MD -MP -MF \"$$(@:%.o=%.d)\" -MT\"$$(@:%.o=%.d)\" -MT\"$$(@:%.o=%.o)\"")
 SET(CMAKE_C_FLAGS "${COMMON_FLAGS}")
 SET(CMAKE_CXX_FLAGS "${COMMON_FLAGS} -Wodr -Wno-volatile -Wno-register -fno-rtti -fno-exceptions")
+
+message("COMMON_FLAGS= ${COMMON_FLAGS}")
 
 SET(LINKER_SCRIPT_DIR ${CMAKE_SOURCE_DIR}/linker/)
 SET(COMMON_LINKER_FLAGS "--specs=nano.specs --specs=nosys.specs -Wl,--gc-sections")
@@ -64,9 +66,6 @@ foreach(TARGET_DATA_STR ${TARGETS})
 
     set(HAL_CONFIG
         GPIO
-        UART
-        I2C
-        ADC    
     )
 
     include(${TARGET_NAME}.cmake)

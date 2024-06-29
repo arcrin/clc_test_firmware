@@ -21,13 +21,12 @@ void GPIODriver::set_speed(SPEED s) const {
 	configure(mode, alternate, type, s, pull);
 }
 
-void GPIODriver::set_alternate(uint8_t alt) const {
-	configure(mode, alt, type, speed, pull);
+void GPIODriver::set_alternate(uint8_t a) const {
+	configure(mode, a, type, speed, pull);
 }
 
-void GPIODriver::set_polarity(bool pol) {
-	polarity = pol;
-	// set level to invert current state if new polarity is different
+void GPIODriver::set_polarity(bool p) {
+	polarity = p;
 	set_level(current_level);
 }
 

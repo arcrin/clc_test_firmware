@@ -57,15 +57,16 @@
             "cwd": "${workspaceRoot}",
             "executable": "./build/cpp_stm32_embedded.elf",
             "configFiles": [
-                "swd_ft.cfg",
-                "stm32f1x_no_working_area.cfg"
+                "cortex_debug_minimal.cfg"
             ],
             "serverpath": "F:/Project/Delta/interface/interface/OpenOCD/windows/openocd.exe", 
             "serverArgs": [
                 "-s", "F:/Project/Delta/interface/interface/OpenOCD/common/scripts",
+                "-f", "swd_ft.cfg",
+                "-c", "ftdi channel 0; transport select swd",
                 "-s", "F:/Project/Delta/interface/interface/OpenOCD",
-                "-c", "ftdi_channel 0; transport select swd",
-                "-c", "init; reset init"
+                "-f", "stm32f1x_no_working_area.cfg",
+                "-c", "adapter speed 1000; init; reset init"
             ],
             "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
             "svdFile": "${workspaceRoot}/hal/stm32f103xx/stm32f103.svd",

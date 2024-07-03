@@ -13,6 +13,8 @@ class GPIOResource : public IOResource {
         );
 };
 
+// Above macro expands to the following:  
+
 // enum CMD { 
 //     CONF, 
 //     W, 

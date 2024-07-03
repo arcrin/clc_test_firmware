@@ -12,9 +12,9 @@ extern uint8_t Temp[RESOURCE_SHELL_TEMP_ARRAY_SIZE];
 #define CommandHandler(name)                                    \
     SHELLERR name(uint32_t Command,                             \
     std::string_view Args[],                                    \
-    uint32_t NumArg,                                            \
+    uint32_t NumArgs,                                            \
     boost::static_string<RESOURCE_SHELL_OUTPUT_SIZE> &Output,   \
-    uint32_t &Error, bool (*InterruptOccured)(void))
+    uint32_t &Error, bool (*InterruptOccurred)(void))
 
 typedef CommandHandler((*CommandHandler_t));
 
@@ -60,17 +60,17 @@ static constexpr class_name##_t Get##class_name##Index(std::string_view Name) {\
 
 #define STATIC_VALS(class_name, ...) \
 ENUM_MAP(enum class class_name##_t, static constexpr SearchableVal<class_name> class_name##List[], 1, NAMED_BRACED_VALUE_HELPER, __VA_ARGS__); \
-static constexpr class_name & Get##class_name(class_name##_t resource) {\
-    return class-name##List[(uint8_t)resource].getconstref();\
-}\
-static constexpr const class_name * Get##class_name(std::string_view Name) {\
-    if(auto Index = SEARCHABLE_PARTIAL_UNIQUE(class_name##List, Name); Index >= 0) {\
-        return &class_name##List[Index].getconstref();\
-    }\
-    return nullptr;\
-}\
-static constexpr class_name##_t Get##class_name##Index(std::string_view Name) {\
-    return (class_name##_t)SEARCH_PARTIAL_UNIQUE(class_name##List, Name);\
+static constexpr const class_name & Get##class_name(class_name##_t resource) {                                                                 \
+	return class_name##List[(uint8_t)resource].getconstref();                                                                                  \
+}                                                                                                                                              \
+static constexpr const class_name * Get##class_name(std::string_view Name) {                                                                   \
+	if (auto Index = SEARCH_PARTIAL_UNIQUE(class_name##List, Name); Index >= 0) {                                                              \
+		return &class_name##List[Index].getconstref();                                                                                         \
+	}                                                                                                                                          \
+	return nullptr;                                                                                                                            \
+}                                                                                                                                              \
+static constexpr class_name##_t Get##class_name##Index(std::string_view Name) {                                                                \
+	return (class_name##_t)SEARCH_PARTIAL_UNIQUE(class_name##List, Name);                                                                      \
 }
 
 #define NAMED_ENUM(type_name, ...) \

@@ -38,3 +38,7 @@ void GPIODriver::set_level(bool state) const {
 bool GPIODriver::get_level() const {
 	return get_physical_level() ^ polarity;
 }
+
+uint32_t GPIODriver::get_cr() const {
+	return hal.CR();
+}

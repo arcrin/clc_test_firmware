@@ -2643,6 +2643,1317 @@
           }
         }
       ]
+    },
+    {
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": true,
+                "isSecondary": true,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code"
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?"
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 171
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 7,
+              "endColumn": 1
+            },
+            "text": " Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nusing InputString = boost::static_string<RESOURCE_SHELL_INPUT_SIZE>;\n```\n\n",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nusing InputString = boost::static_string<RESOURCE_SHELL_INPUT_SIZE>;\n```\n\n"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The line of code you've selected from the [`config.h`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D \"c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\config.h\") file defines a type alias named [`InputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") using the [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") template class. This is a feature of modern C++ (C++11 and later) that allows for more readable type definitions compared to the traditional `typedef` approach.\n\nThe [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") is a part of the Boost C++ Libraries, which are a collection of peer-reviewed, portable, and well-tested libraries that extend the functionality of C++. Specifically, [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") is designed to represent a string with a fixed maximum size that is determined at compile time. This is in contrast to `std::string`, which can dynamically resize at runtime to accommodate changes in its content.\n\nThe template parameter [`RESOURCE_SHELL_INPUT_SIZE`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fresource_shell_config.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A8%7D%5D \"firmwareutil/resourceshell/resource_shell_config.h\") is used to specify the maximum size of the string. This parameter should be a compile-time constant expression that defines how many characters (including the null terminator) the [`InputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") can hold. The actual value of [`RESOURCE_SHELL_INPUT_SIZE`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fresource_shell_config.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A8%7D%5D \"firmwareutil/resourceshell/resource_shell_config.h\") is not shown in the selected code, but it must be defined elsewhere in your project, likely as a preprocessor macro or a `constexpr` variable.\n\nUsing [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") for defining [`InputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") has several benefits, especially in contexts where memory allocation needs to be deterministic and efficient, such as in embedded systems or real-time applications. Since the size is fixed and known at compile time, [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") does not require dynamic memory allocation, reducing runtime overhead and eliminating the risk of memory allocation failures. However, it also means that you need to be careful to ensure that the size specified by [`RESOURCE_SHELL_INPUT_SIZE`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fresource_shell_config.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A8%7D%5D \"firmwareutil/resourceshell/resource_shell_config.h\") is sufficient for your application's needs, as attempting to store a string longer than this size will result in an error.\n\nIn summary, this line of code defines a new type [`InputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") as a statically-sized string, leveraging the Boost library's [`static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A41%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/boost/static_string/static_string.hpp\") class template. This type is intended for use in situations where the maximum size of the string is known at compile time and where avoiding dynamic memory allocation is desirable.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1389,
+          "totalElapsed": 16225
+        },
+        "metadata": {
+          "responseId": "195aaa17-6716-48e7-9c3b-685a9db0d451",
+          "sessionId": "5b66a63a-18fb-4dc3-b573-4f752de5c4fe",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        }
+      },
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": true,
+          "isSecondary": true,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code"
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?"
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\config.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/config.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/config.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 5,
+              "startColumn": 1,
+              "endLineNumber": 5,
+              "endColumn": 69
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 45
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 46
+            },
+            "text": "what does the 'using' keyword do in this case",
+            "kind": "text"
+          }
+        ],
+        "text": "what does the 'using' keyword do in this case"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The `using` keyword in this context is used to define type aliases in C++. It introduces a name that can be used as a synonym for the type that follows it. Here's what it does for each line:\n\n1. [`using InputString = boost::static_string<RESOURCE_SHELL_INPUT_SIZE>;`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A4%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\")\n   - This line defines [`InputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A4%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\") as an alias for [`boost::static_string<RESOURCE_SHELL_INPUT_SIZE>`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/boost/static_string.hpp\"). It means that anywhere in the code, [`InputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A4%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\") can be used as a shorthand for a [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/boost/static_string.hpp\") with a size defined by [`RESOURCE_SHELL_INPUT_SIZE`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fresource_shell_config.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A8%7D%5D \"firmwareutil/resourceshell/resource_shell_config.h\").\n\n2. [`using OutputString = boost::static_string<RESOURCE_SHELL_OUTPUT_SIZE>;`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\")\n   - Similarly, this line defines [`OutputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\") as an alias for [`boost::static_string<RESOURCE_SHELL_OUTPUT_SIZE>`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/boost/static_string.hpp\"). It allows the use of [`OutputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\") as a shorthand for a [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/boost/static_string.hpp\") with a size defined by [`RESOURCE_SHELL_OUTPUT_SIZE`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fresource_shell_config.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A2%2C%22character%22%3A8%7D%5D \"firmwareutil/resourceshell/resource_shell_config.h\").\n\nThese aliases help make the code more readable and easier to maintain, especially when the same complex type is used multiple times throughout the codebase.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 900,
+          "totalElapsed": 7898
+        },
+        "metadata": {
+          "responseId": "bdce7831-d45c-4699-b106-7bcd673d035d",
+          "sessionId": "6144dccd-aebd-4320-9a63-dacfaa3cff78",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "isCanceled": false,
+      "agent": {
+        "b": {
+          "extensionId": {
+            "value": "GitHub.copilot-chat",
+            "_lower": "github.copilot-chat"
+          },
+          "publisherDisplayName": "GitHub",
+          "extensionPublisherId": "GitHub",
+          "extensionDisplayName": "GitHub Copilot Chat",
+          "id": "github.copilot.default",
+          "description": "Ask Copilot or type / for commands",
+          "metadata": {
+            "themeIcon": {
+              "id": "copilot"
+            },
+            "hasFollowups": true,
+            "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+            "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+            "helpTextPostfix": {
+              "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview).",
+              "isTrusted": {
+                "enabledCommands": [
+                  "inlineChat.start"
+                ]
+              },
+              "supportThemeIcons": false,
+              "supportHtml": false,
+              "uris": {
+                "command:inlineChat.start": {
+                  "$mid": 1,
+                  "path": "inlineChat.start",
+                  "scheme": "command"
+                },
+                "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                  "$mid": 1,
+                  "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                  "scheme": "https",
+                  "authority": "docs.github.com",
+                  "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+                },
+                "https://code.visualstudio.com/docs/copilot/overview": {
+                  "$mid": 1,
+                  "path": "/docs/copilot/overview",
+                  "scheme": "https",
+                  "authority": "code.visualstudio.com"
+                }
+              }
+            },
+            "supportIssueReporting": false,
+            "supportsSlowVariables": true,
+            "requester": {
+              "name": "arcrin",
+              "icon": {
+                "$mid": 1,
+                "path": "/arcrin",
+                "scheme": "https",
+                "authority": "avatars.githubusercontent.com"
+              }
+            }
+          },
+          "name": "GitHubCopilot",
+          "fullName": "GitHub Copilot",
+          "isDefault": true,
+          "locations": [
+            "panel"
+          ],
+          "slashCommands": []
+        },
+        "d": {}
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\config.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/config.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/config.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 6,
+              "endColumn": 71
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 36
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 37
+            },
+            "text": "so it defines two fixed size strings",
+            "kind": "text"
+          }
+        ],
+        "text": "so it defines two fixed size strings"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "Yes, the `using` keyword in this context defines two type aliases for fixed-size strings, [`InputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A4%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\") and [`OutputString`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fconfig.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A6%7D%5D \"firmwareutil/resourceshell/config.h\"), using the [`boost::static_string`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fboost%2Fstatic_string.hpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/boost/static_string.hpp\") template class. The sizes of these strings are determined by the constants [`RESOURCE_SHELL_INPUT_SIZE`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fresource_shell_config.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A8%7D%5D \"firmwareutil/resourceshell/resource_shell_config.h\") and [`RESOURCE_SHELL_OUTPUT_SIZE`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2Fresource_shell_config.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A2%2C%22character%22%3A8%7D%5D \"firmwareutil/resourceshell/resource_shell_config.h\"), respectively. This allows for the creation of strings with a compile-time fixed size, which can be more efficient in terms of memory usage and performance compared to dynamically-sized strings for certain applications.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1551,
+          "totalElapsed": 4999
+        },
+        "metadata": {
+          "responseId": "89744ac6-7af9-4f6f-8614-d641266ae4e8",
+          "sessionId": "6144dccd-aebd-4320-9a63-dacfaa3cff78",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "isCanceled": false,
+      "agent": {
+        "b": {
+          "extensionId": {
+            "value": "GitHub.copilot-chat",
+            "_lower": "github.copilot-chat"
+          },
+          "publisherDisplayName": "GitHub",
+          "extensionPublisherId": "GitHub",
+          "extensionDisplayName": "GitHub Copilot Chat",
+          "id": "github.copilot.default",
+          "description": "Ask Copilot or type / for commands",
+          "metadata": {
+            "themeIcon": {
+              "id": "copilot"
+            },
+            "hasFollowups": true,
+            "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+            "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+            "helpTextPostfix": {
+              "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview).",
+              "isTrusted": {
+                "enabledCommands": [
+                  "inlineChat.start"
+                ]
+              },
+              "supportThemeIcons": false,
+              "supportHtml": false,
+              "uris": {
+                "command:inlineChat.start": {
+                  "$mid": 1,
+                  "path": "inlineChat.start",
+                  "scheme": "command"
+                },
+                "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                  "$mid": 1,
+                  "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                  "scheme": "https",
+                  "authority": "docs.github.com",
+                  "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+                },
+                "https://code.visualstudio.com/docs/copilot/overview": {
+                  "$mid": 1,
+                  "path": "/docs/copilot/overview",
+                  "scheme": "https",
+                  "authority": "code.visualstudio.com"
+                }
+              }
+            },
+            "supportIssueReporting": false,
+            "supportsSlowVariables": true,
+            "requester": {
+              "name": "arcrin",
+              "icon": {
+                "$mid": 1,
+                "path": "/arcrin",
+                "scheme": "https",
+                "authority": "avatars.githubusercontent.com"
+              }
+            }
+          },
+          "name": "GitHubCopilot",
+          "fullName": "GitHub Copilot",
+          "isDefault": true,
+          "locations": [
+            "panel"
+          ],
+          "slashCommands": []
+        },
+        "d": {}
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\config.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/config.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/config.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 6,
+              "endColumn": 71
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": true,
+                "isSecondary": true,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code"
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?"
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 147
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 7,
+              "endColumn": 1
+            },
+            "text": " Write an explanation for the active selection as paragraphs of text.\n\n```cpp\ntypedef CommandHandler((*CommandHandler_t));\n```\n\n",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Write an explanation for the active selection as paragraphs of text.\n\n```cpp\ntypedef CommandHandler((*CommandHandler_t));\n```\n\n"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The line of code you've provided appears to be an attempt to define a type alias in C++, but it seems to have a syntax error. The correct way to define a type alias for a function pointer or any other type in modern C++ (C++11 and later) is by using the `using` keyword or the `typedef` keyword correctly. The line as it stands is incorrect and will not compile.\n\nThe intention seems to be to create an alias for a pointer to a function or possibly another type named [`CommandHandler`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\"). However, the syntax used does not correctly define anything. Let's break down what might have been intended and how to correct it.\n\nIf [`CommandHandler`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\") is intended to be a function type, you would first need to define what that function type looks like, for example:\n\n```cpp\nvoid CommandHandler(int); // Example function type taking an int and returning void\n```\n\nThen, if you want to create a type alias for a pointer to such a function, you could do it using `typedef` like this:\n\n```cpp\ntypedef void (*CommandHandler_t)(int);\n```\n\nOr, using the `using` syntax, which is preferred in C++11 and later for its clearer syntax:\n\n```cpp\nusing CommandHandler_t = void (*)(int);\n```\n\nBoth of these correctly define `CommandHandler_t` as a type that is a pointer to a function taking an int and returning void.\n\nIf `CommandHandler` is not a function type but perhaps a class or struct, and you intended to create a pointer type to it, the syntax would be different. For example, if `CommandHandler` is a class, and you want to create an alias for a pointer to `CommandHandler`, it would look like this with `typedef`:\n\n```cpp\ntypedef CommandHandler* CommandHandler_t;\n```\n\nOr, using the `using` syntax:\n\n```cpp\nusing CommandHandler_t = CommandHandler*;\n```\n\nIn summary, the original line of code you've provided has a syntax error and does not correctly define a type alias. Depending on what `CommandHandler` is (a function type, class, or something else), the correct definition of `CommandHandler_t` as a type alias would follow the corrected examples provided above.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1613,
+          "totalElapsed": 15550
+        },
+        "metadata": {
+          "responseId": "58d928f7-fb17-4eaf-927d-ce213e287a0a",
+          "sessionId": "5b66a63a-18fb-4dc3-b573-4f752de5c4fe",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        }
+      },
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": true,
+          "isSecondary": true,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code"
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?"
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\IOResource.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/IOResource.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/IOResource.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 19,
+              "startColumn": 1,
+              "endLineNumber": 19,
+              "endColumn": 45
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": true,
+                "isSecondary": true,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code"
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?"
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 531
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 13,
+              "endColumn": 1
+            },
+            "text": " Write an explanation for the active selection as paragraphs of text.\n\n```cpp\n#define CommandHandler(name)                                    \\\n    SHELLERR name(uint32_t Command,                             \\\n    std::string_view Args[],                                    \\\n    uint32_t NumArg,                                            \\\n    boost::static_string<RESOURCE_SHELL_OUTPUT_SIZE> &Output,   \\\n    uint32_t &Error, bool (*InterruptOccurred)(void))\ntypedef CommandHandler((*CommandHandler_t));\n```\n\n",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Write an explanation for the active selection as paragraphs of text.\n\n```cpp\n#define CommandHandler(name)                                    \\\n    SHELLERR name(uint32_t Command,                             \\\n    std::string_view Args[],                                    \\\n    uint32_t NumArg,                                            \\\n    boost::static_string<RESOURCE_SHELL_OUTPUT_SIZE> &Output,   \\\n    uint32_t &Error, bool (*InterruptOccurred)(void))\ntypedef CommandHandler((*CommandHandler_t));\n```\n\n"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The provided code snippet is from a C++ project and involves a macro definition followed by a `typedef` statement that attempts to use this macro. Let's break down each part for clarity.\n\n### Macro Definition\n\nThe `#define CommandHandler(name)` line starts the definition of a macro named `CommandHandler`. Macros in C++ are preprocessor directives, meaning they are handled before the actual compilation process begins. This particular macro is designed to simplify the declaration of functions that follow a specific signature pattern.\n\nThe macro takes a single argument, `name`, which is intended to be the name of the function being defined. The rest of the macro expands into a function declaration with the following signature:\n\n- Return type: `SHELLERR`, which is presumably a custom type defined elsewhere in your project. It likely represents the status or error codes that the function can return.\n- Parameters:\n  - `uint32_t Command`: An unsigned 32-bit integer, possibly used to specify the command or operation the function should perform.\n  - `std::string_view Args[]`: An array of `std::string_view`, which are lightweight, non-owning references to strings. This parameter is likely used for passing a list of arguments or options to the command.\n  - `uint32_t NumArg`: Another unsigned 32-bit integer, probably indicating the number of arguments or options in the `Args` array.\n  - `boost::static_string<RESOURCE_SHELL_OUTPUT_SIZE> &Output`: A reference to a `boost::static_string` object, which is a fixed-size string type from the Boost library. `RESOURCE_SHELL_OUTPUT_SIZE` is a compile-time constant defining the size of this string. This parameter is likely used to store the output or result of the command.\n  - `uint32_t &Error`: A reference to an unsigned 32-bit integer, intended to store error codes or status information.\n  - `bool (*InterruptOccurred)(void)`: A pointer to a function that takes no arguments and returns a boolean. This function pointer is likely used to check if an interrupt has occurred during the execution of the command.\n\n### Typedef Statement\n\nFollowing the macro definition is a `typedef` statement that attempts to use the `CommandHandler` macro to define a type alias named `CommandHandler_t`. However, this statement is syntactically incorrect and will not compile as intended. The correct way to create a type alias for a function pointer in C++ would involve specifying the function signature directly, without using a macro in the `typedef`.\n\nTo correct and achieve the intended functionality, assuming the goal is to create a type alias for a pointer to a function with the signature defined by the `CommandHandler` macro, you would first need to define the function signature directly, and then use `typedef` or the `using` keyword (preferred in C++11 and later) to create the alias. Since the macro includes parameters that are not part of a simple function signature (like the function name), you cannot directly use it in a `typedef` to define a function pointer type.\n\nIn summary, the provided code snippet includes a macro for defining functions with a specific signature and an incorrect attempt to create a type alias for a function pointer using that macro. To correctly define such a type alias, you would need to bypass the macro and directly specify the function signature in the `typedef` or `using` statement.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1562,
+          "totalElapsed": 23842
+        },
+        "metadata": {
+          "responseId": "a650a564-bcec-41a1-af18-d7a73dfbd007",
+          "sessionId": "5b66a63a-18fb-4dc3-b573-4f752de5c4fe",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        }
+      },
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": true,
+          "isSecondary": true,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code"
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?"
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\IOResource.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/IOResource.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/IOResource.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 12,
+              "startColumn": 1,
+              "endLineNumber": 19,
+              "endColumn": 45
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": true,
+                "isSecondary": true,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code"
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?"
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 162
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 7,
+              "endColumn": 1
+            },
+            "text": " Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nstatic SHELLERR Handle(uint32_t &Error, bool &UseChecksum);\n```\n\n",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nstatic SHELLERR Handle(uint32_t &Error, bool &UseChecksum);\n```\n\n"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The line of code you've provided is a declaration of a static member function named [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") within a C++ class or struct, which is presumably defined in a header file named [`Resourcehandler.h`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D \"c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\Resourcehandler.h\"). Let's break down the components of this function declaration:\n\n- `static`: This keyword indicates that [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") is a static member function. Static member functions are not associated with any particular instance of the class. They can be called on the class itself, rather than on objects of the class. This means that [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") does not have access to the `this` pointer, which points to the current instance of the class. Static member functions can only access static data members and other static member functions of the class.\n\n- [`SHELLERR`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\"): This is the return type of the [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") function. [`SHELLERR`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\") is likely a user-defined type, possibly an enumeration or a class, that represents the status or error codes that the function can return. The specific nature of [`SHELLERR`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\") would be defined elsewhere in your project.\n\n- [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\"): This is the name of the function. The naming suggests that it is intended to \"handle\" something, possibly related to resource management or processing, given the context of the file name [`Resourcehandler.h`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D \"c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\Resourcehandler.h\").\n\n- `(uint32_t &Error, bool &UseChecksum)`: These are the parameters of the [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") function, enclosed in parentheses.\n  - [`uint32_t &Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProgram%20Files%20(x86)%2FGNU%20Arm%20Embedded%20Toolchain%2F10%202021.10%2Farm-none-eabi%2Finclude%2Fsys%2F_stdint.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A47%2C%22character%22%3A19%7D%5D \"../../../../Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/arm-none-eabi/include/sys/_stdint.h\"): The first parameter is a reference to an unsigned 32-bit integer ([`uint32_t`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProgram%20Files%20(x86)%2FGNU%20Arm%20Embedded%20Toolchain%2F10%202021.10%2Farm-none-eabi%2Finclude%2Fsys%2F_stdint.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A47%2C%22character%22%3A19%7D%5D \"../../../../Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/arm-none-eabi/include/sys/_stdint.h\")). The use of a reference (`&`) indicates that this parameter is intended to be modified by the function, likely to return an error code or status information back to the caller. The name [`Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A41%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") suggests that it will hold error-related information.\n  - `bool &UseChecksum`: The second parameter is a reference to a boolean value. The use of a reference here again indicates that this parameter may be modified by the function. The name [`UseChecksum`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A54%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") suggests that it controls or indicates whether a checksum should be used in whatever operation the [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") function performs.\n\nThis function declaration does not provide the implementation details of the [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") function. The implementation would be found in the corresponding `.cpp` file, where the behavior of the function—how it handles errors, and how the [`UseChecksum`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A54%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") parameter affects its operation—would be defined.\n\nIn summary, the [`Handle`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourcehandler.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A25%2C%22character%22%3A24%7D%5D \"firmwareutil/resourceshell/Resourcehandler.h\") function is a static member function of a class or struct, designed to perform some operation, potentially related to resource handling, that may involve error reporting and optionally using a checksum. The function's implementation would detail its exact behavior.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1973,
+          "totalElapsed": 18837
+        },
+        "metadata": {
+          "responseId": "c2c7e3cc-4bce-4369-b162-6171904af724",
+          "sessionId": "5b66a63a-18fb-4dc3-b573-4f752de5c4fe",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        }
+      },
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": true,
+          "isSecondary": true,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code"
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?"
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\Resourcehandler.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/Resourcehandler.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/Resourcehandler.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 26,
+              "startColumn": 9,
+              "endLineNumber": 26,
+              "endColumn": 68
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 23
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 24
+            },
+            "text": "what is a friend class?",
+            "kind": "text"
+          }
+        ],
+        "text": "what is a friend class?"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "A `friend` class in C++ is a class that is allowed to access private and protected members of another class. When a class is declared as a `friend` of another class, it can access the latter's private and protected members as if it were a member of that class. This mechanism is used to allow a particular class to access the internal details of another class for the purpose of enhancing collaboration between classes without breaking encapsulation completely.\n\nHere's a basic example:\n\n```cpp\nclass Box {\n    double width;\npublic:\n    double getWidth() const { return width; }\n    void setWidth(double wid) { width = wid; }\n    friend class BoxManager; // BoxManager can access private members of Box\n};\n\nclass BoxManager {\npublic:\n    void printWidth(const Box& b) {\n        // Access private member of Box\n        std::cout << \"Width of box: \" << b.width << std::endl;\n    }\n};\n```\n\nIn this example, `BoxManager` is a friend of `Box`, so it can access the private member `width` directly.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1281,
+          "totalElapsed": 9015
+        },
+        "metadata": {
+          "responseId": "8a78e50d-90ee-4bb1-9466-e84ec9458e87",
+          "sessionId": "6144dccd-aebd-4320-9a63-dacfaa3cff78",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "isCanceled": false,
+      "agent": {
+        "b": {
+          "extensionId": {
+            "value": "GitHub.copilot-chat",
+            "_lower": "github.copilot-chat"
+          },
+          "publisherDisplayName": "GitHub",
+          "extensionPublisherId": "GitHub",
+          "extensionDisplayName": "GitHub Copilot Chat",
+          "id": "github.copilot.default",
+          "description": "Ask Copilot or type / for commands",
+          "metadata": {
+            "themeIcon": {
+              "id": "copilot"
+            },
+            "hasFollowups": true,
+            "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+            "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+            "helpTextPostfix": {
+              "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview).",
+              "isTrusted": {
+                "enabledCommands": [
+                  "inlineChat.start"
+                ]
+              },
+              "supportThemeIcons": false,
+              "supportHtml": false,
+              "uris": {
+                "command:inlineChat.start": {
+                  "$mid": 1,
+                  "path": "inlineChat.start",
+                  "scheme": "command"
+                },
+                "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                  "$mid": 1,
+                  "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                  "scheme": "https",
+                  "authority": "docs.github.com",
+                  "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+                },
+                "https://code.visualstudio.com/docs/copilot/overview": {
+                  "$mid": 1,
+                  "path": "/docs/copilot/overview",
+                  "scheme": "https",
+                  "authority": "code.visualstudio.com"
+                }
+              }
+            },
+            "supportIssueReporting": false,
+            "supportsSlowVariables": true,
+            "requester": {
+              "name": "arcrin",
+              "icon": {
+                "$mid": 1,
+                "path": "/arcrin",
+                "scheme": "https",
+                "authority": "avatars.githubusercontent.com"
+              }
+            }
+          },
+          "name": "GitHubCopilot",
+          "fullName": "GitHub Copilot",
+          "isDefault": true,
+          "locations": [
+            "panel"
+          ],
+          "slashCommands": []
+        },
+        "d": {}
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\IOResource.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/IOResource.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/IOResource.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 22,
+              "startColumn": 18,
+              "endLineNumber": 22,
+              "endColumn": 33
+            }
+          }
+        }
+      ]
     }
   ]
 }

@@ -80,6 +80,8 @@ class GPIODriver {
 
 		bool get_level() const;
 
+		uint32_t get_cr() const;
+
 
 	private:
 		/// @brief Set the physical level of the output

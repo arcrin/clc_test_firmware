@@ -55,7 +55,7 @@ void GPIODriver::configure(MODE mode_, uint8_t alternate_, TYPE type_, SPEED spe
 	uint32_t cr = ((cnf << 2) | (_mode << 0)) << (4 * hal.offset());
 	hal.CR() = (hal.CR() & ~(0xF << (4 * hal.offset()))) | cr;
 
-	// NOTE: Alternate function selection deos not work like on other processors. It should be manually set up by the app
+	// NOTE: Alternate function selection does not work like on other processors. It should be manually set up by the app
 
 	if (mode_ == MODE::INPUT) {
 		// ODR register reused for pull selection in input mode

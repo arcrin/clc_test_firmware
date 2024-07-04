@@ -28,6 +28,14 @@ int main() {
                     GPIODriver::TYPE::PUSH_PULL, 
                     GPIODriver::SPEED::MEDIUM, 
                     GPIODriver::PULL::NONE);
+    GPIODriver sw1_input({GPIOC_BASE, 8},
+                    GPIODriver::MODE::INPUT, 
+                    0, 
+                    false, 
+                    false, 
+                    GPIODriver::TYPE::PUSH_PULL, 
+                    GPIODriver::SPEED::MEDIUM, 
+                    GPIODriver::PULL::DOWN);
 
 
 
@@ -45,8 +53,10 @@ int main() {
     bool sw1_led_state = false;
     sw1_led.set_level(sw1_led_state);
     while(1){
-        _delay_ms(500);
-        sw1_led_state = !sw1_led_state;
-        sw1_led.set_level(sw1_led_state);
+        if (sw1_input.get_level() == false) {
+            _delay_ms(50);
+            sw1_led_state = !sw1_led_state;
+            sw1_led.set_level(sw1_led_state);
+        }
     }
 }

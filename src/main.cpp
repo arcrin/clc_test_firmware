@@ -5,7 +5,7 @@ int main() {
     GPIODriver red_led({GPIOE_BASE, 0}, 
                     GPIODriver::MODE::OUTPUT, 
                     0, 
-                    false, 
+                    true, 
                     false, 
                     GPIODriver::TYPE::PUSH_PULL, 
                     GPIODriver::SPEED::MEDIUM, 
@@ -14,7 +14,7 @@ int main() {
     GPIODriver green_led({GPIOE_BASE, 1},
                     GPIODriver::MODE::OUTPUT, 
                     0, 
-                    false, 
+                    true, 
                     false, 
                     GPIODriver::TYPE::PUSH_PULL, 
                     GPIODriver::SPEED::MEDIUM, 
@@ -23,7 +23,7 @@ int main() {
     GPIODriver sw1_led({GPIOE_BASE, 8},
                     GPIODriver::MODE::OUTPUT, 
                     0, 
-                    false, 
+                    true, 
                     false, 
                     GPIODriver::TYPE::PUSH_PULL, 
                     GPIODriver::SPEED::MEDIUM, 
@@ -41,16 +41,16 @@ int main() {
 
     red_led.DriverInit();
     red_led.configure();
-    red_led.set_level(false);
+    red_led.set_level(true);
 
     green_led.DriverInit();
     green_led.configure();
-    green_led.set_level(false);
+    green_led.set_level(true);
 
     sw1_led.DriverInit();   
     sw1_led.configure();
     // sw1_led.set_level(false);
-    bool sw1_led_state = false;
+    bool sw1_led_state = true;
     sw1_led.set_level(sw1_led_state);
     while(1){
         if (sw1_input.get_level() == false) {

@@ -1,5 +1,6 @@
 #include "GPIODriver.h"
 
+// Enable peripheral clock on APB2 bus
 void GPIODriver::DriverInit() {
 	#ifdef HAL_STM32F103xB
 		RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN | RCC_APB2ENR_IOPDEN | RCC_APB2ENR_IOPEEN;

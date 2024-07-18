@@ -25,16 +25,14 @@ CommandHandler(GPIOResource::Handler) {
             return SHELLERR::OK;
         }
         case W: {
-            if(!NumArgs) {
+            if (!NumArgs) {
                 return SHELLERR::ARGUMENT;
             }
-
-            bool state;
-            if (!Parser::NumFromString(Args[0], state)) {
+            bool State;
+            if (!Parser::NumFromString(Args[0], State)) {
                 return SHELLERR::ARGUMENT;
             }
-
-            gpio->set_level(state);
+            gpio->set_level(State);
             return SHELLERR::OK;
         }
         case R: {
@@ -44,4 +42,13 @@ CommandHandler(GPIOResource::Handler) {
         }
     }
     return SHELLERR::IMPLEMENTATION;
-};
+}
+
+// SHELLERR GPIOResource::Handler(
+//     uint32_t Command, 
+//     std::string_view Args[], 
+//     uint32_t NumArgs, 
+//     boost::static_string<2048> &Output, 
+//     uint32_t &Error, 
+//     bool (*InterruptOccurred)(void)
+// )

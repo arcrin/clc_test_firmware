@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_SYSTEM_NAME Generic)
@@ -19,7 +20,7 @@ set(TARGETS
 # The clock speed of the STM32F103V8 is might be different
 
 add_compile_definitions(
-    F_CPU=72000000
+    F_CPU=8000000
 )
 
 include_directories(

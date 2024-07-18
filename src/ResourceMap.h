@@ -1,6 +1,8 @@
 #pragma once
 #include "ResourceEntry.h"
 #include "GPIOResource.h"
+#include "UARTResource.h"
+#include "BoardUART.h"
 
 class ResourceMap {
     public: 
@@ -9,19 +11,18 @@ class ResourceMap {
     
     protected:
         RESOURCE_MAP(
-            GPIOResource, ""
+            GPIOResource, "",
+            UARTResource, "",
         );
 
-        // Above macro expands to the following:
-        // static constexpr const ResourceEntry ResourceInfo[]{
-        //     {
-        //         "GPIOResource", 
-        //         GPIOResource::Init, 
-        //         GPIOResource::Handler, 
-        //         GPIOResource::Task, 
-        //         GPIOResource::CmdMap, 
-        //         (sizeof(GPIOResource::CmdMap) / sizeof(GPIOResource::CmdMap[0])), 
-        //         ""
-        //     },
-        // };
+    static void putc(uint8_t c) {
+       static constexpr const UARTResource & DebugUART = BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG);
+       DebugUART.putc(c);   
+    }
+
+    static void ngetc(uint8_t &c) {
+        static constexpr const UARTResource & DebugUART = BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG);
+        DebugUART.ngetc(c);
+    }
+    
 };

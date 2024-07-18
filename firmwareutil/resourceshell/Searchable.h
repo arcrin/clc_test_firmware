@@ -1,7 +1,6 @@
 #pragma once
 #include <algorithm>
 #include <string_view>
-#include "strings.h"
 #include <cstring>
 
 class Searchable {
@@ -63,22 +62,24 @@ private:
 
 template <typename T>
 class SearchableRef : public Searchable {
-    public:
-        constexpr SearchableRef(std::string_view Name, const T& Resource) :
-            Searchable(Name), Resource(Resource) {}
-        inline constexpr T& get() const {return Resource;}
-        inline constexpr const T& getconst() const {return Resource;}
-    private:
-        const T& Resource;
+public:
+	constexpr SearchableRef(std::string_view Name, const T& Resource) :
+		Searchable(Name), Resource(Resource) {}
+	inline constexpr T& get() const { return Resource; }
+	inline constexpr const T& getconst() const { return Resource; }
+
+private:
+	const T& Resource;
 };
 
 template <typename T>
 class SearchableVal : public Searchable {
-    public:
-        constexpr SearchableVal(std::string_view Name, T Resource) :
-            Searchable(Name), Resource(std::move(Resource)) {}
-        inline constexpr T& getref() {return Resource;}
-        inline constexpr const T& getconstref() const {return Resource;}
-    private:
-        T Resource;
+public:
+	constexpr SearchableVal(std::string_view Name, T Resource) :
+		Searchable(Name), Resource(std::move(Resource)) {}
+	inline constexpr T& getref() { return Resource; }
+	inline constexpr const T& getconstref() const { return Resource; }
+
+private:
+	T Resource;
 };

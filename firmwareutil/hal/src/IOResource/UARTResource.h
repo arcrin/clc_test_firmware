@@ -16,3 +16,10 @@ class UARTResource : public UARTDriver, public IOResource{
             TEST, "<uart name> <hex byte>. Continuously transmit the hex byte until the command is interrupted",
         );
 };
+
+// enum CMD{ CONF, W, R, TEST, }; 
+// static constexpr CmdEntry CmdMap[]{ 
+//     {"CONF", {"<uart name> <config name>. Configure the peripheral with an existing configuration"}}, 
+//     {"W", {"<uart name> <hex string>. Transmit data from the UART"}}, 
+//     {"R", {"<uart name> <# bytes>. Non-blocking receive up to `# bytes` bytes from the RX buffer"}}, 
+//     {"TEST", {"<uart name> <hex byte>. Continuously transmit the hex byte until the command is interrupted"}},}

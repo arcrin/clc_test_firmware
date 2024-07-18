@@ -1,4 +1,5 @@
 #pragma once
+
 #include "resource_shell_config.h"
 #include "boost/static_string.hpp"
 

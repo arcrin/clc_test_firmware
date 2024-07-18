@@ -58,11 +58,11 @@ public:
 #ifdef HAL_STM32F103xB
 		,uint8_t remap
 #endif
-		) :
-	uart_address(uart_address)
-	,info(DATA.at(uart_address))
+		) : 
+		uart_address(uart_address), 
+		info(DATA.at(uart_address))
 #ifdef HAL_STM32F103xB
-	,remap(remap)
+		,remap(remap)
 #endif
 	{}
 

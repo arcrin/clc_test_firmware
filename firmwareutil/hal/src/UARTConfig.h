@@ -14,16 +14,11 @@ struct UARTConfig {
 		TWO = 1,
 	};
 
-	constexpr UARTConfig(
-		uint32_t baudrate,
-		PARITY parity,
-		STOP stop
-	): baudrate(baudrate),
-	   parity(parity),
-	   stop(stop)
-	{}
-
-	uint32_t baudrate;
+	uint32_t baud;
 	PARITY parity;
 	STOP stop;
+
+	const GPIODriver TX; 
+	const GPIODriver RX;
+	const GPIODriver * RTS = nullptr;
 };

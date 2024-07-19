@@ -20,6 +20,10 @@ file(GLOB TARGET_FILES
     ${APP_HAL_GLOBS}
 )
 
+message(STATUS "APP_FILES: ${APP_FILES}")
+message(STATUS "TARGET_FIELS: ${TARGET_FIELS}")
+message(STATUS "HAL_FILES: ${HAL_FILES}")
+
 add_executable(${TARGET_NAME}
     ${APP_FILES}
     ${TARGET_FILES}

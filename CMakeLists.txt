@@ -31,9 +31,11 @@ include_directories(
 
 # Collect the application source files
 file(GLOB APP_FILES
-    src/*                           # This is the main test firmware
-    fimrwareutil/resourceshell/*    # Shell utility, common to all 
+    src/*                           
+    firmwareutil/resourceshell/*    
 )
+
+message(STATUS "All source files ${APP_FILES}")
 
 # Compiler and linker flags
 SET(DEBUG_OPTIMIZATION true)
@@ -67,6 +69,7 @@ foreach(TARGET_DATA_STR ${TARGETS})
 
     set(HAL_CONFIG
         GPIO
+        UART
     )
 
     include(${TARGET_NAME}.cmake)

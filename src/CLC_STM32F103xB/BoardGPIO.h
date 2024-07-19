@@ -9,16 +9,22 @@ class BoardGPIO {
 
         STATIC_VALS(
             GPIODriver, 
-            LED_RED, ({GPIOE_BASE, 0}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            LED_GREEN, ({GPIOE_BASE, 1}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),   
-            SW1_LED, ({GPIOE_BASE, 8}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            SW2_LED, ({GPIOE_BASE, 9}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            SW3_LED, ({GPIOE_BASE, 10}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            SW4_LED, ({GPIOE_BASE, 11}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            SW5_LED, ({GPIOE_BASE, 12}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            SW6_LED, ({GPIOE_BASE, 13}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            SW7_LED, ({GPIOE_BASE, 14}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            SW8_LED, ({GPIOE_BASE, 15}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE)
+            LED_RED, ({GPIOE_BASE, 0}, 
+                      GPIODriver::MODE::OUTPUT, 
+                      0,
+                      true, 
+                      true, 
+                      GPIODriver::TYPE::PUSH_PULL,
+                      GPIODriver::SPEED::MEDIUM, 
+                      GPIODriver::PULL::NONE),
+            LED_GREEN, ({GPIOE_BASE, 1}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),   
+            SW1_LED, ({GPIOE_BASE, 8}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SW2_LED, ({GPIOE_BASE, 9}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SW3_LED, ({GPIOE_BASE, 10}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SW4_LED, ({GPIOE_BASE, 11}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SW6_LED, ({GPIOE_BASE, 13}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SW7_LED, ({GPIOE_BASE, 14}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SW8_LED, ({GPIOE_BASE, 15}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE)
         );
 
     //     enum class GPIODriver_t{

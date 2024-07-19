@@ -9,7 +9,7 @@ void UARTDriver::configure(UARTConfig const & config) const {
 	// unconfigure the current pins
 	if (current_config && (&current_config->TX != &config.TX)) current_config->TX.unconfigure();
 	if (current_config && (&current_config->RX != &config.RX)) current_config->RX.unconfigure();
-	if (current_config && current_config->RTS && (current_config->RTS != config.RTS))
+	if (current_config && current_config->RTS && (current_config->RTS != config.RTS)) current_config->RTS->unconfigure();
 
 	current_config = &config;	
 
@@ -57,7 +57,7 @@ void UARTDriver::putc(uint8_t c) const {
 }
 
 void UARTDriver::putc_raw(uint8_t c) const {
-	while(!hal.uart()->SR & USART_SR_TXE);
+	while(!(hal.uart()->SR & USART_SR_TXE));
 	hal.uart()->DR = c;	
 }
 
@@ -68,7 +68,7 @@ bool UARTDriver::ngetc(uint8_t &c) const {
 
 void UARTDriver::IRQHandler() const {
 	while (hal.uart()->SR & (USART_SR_ORE | USART_SR_RXNE)) {
-		uint8_t c = hal.uart()->DR;
+		uint8_t c = hal.uart()->DR;	
 		Buffer.Put(c);
 	}
 }

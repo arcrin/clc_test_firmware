@@ -2,14 +2,27 @@
 #include "UARTHAL.h"
 #include "BoardUART.h"
 #include "BoardGPIO.h"
+#include "util.h"
 
 int main() {
-    BoardGPIO::Init();
+    __disable_irq();
 
-    // test out the GPIO resources
+    ResourceHandler::Init();
+
+    __enable_irq();
 
     
+    BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG).puts("Hello, World!\n\r", 15);
     while(1){
-        
+        ResourceHandler::ShellTask();
+    }
+}
+
+
+extern "C" {
+    extern void USART3_IRQHandler();
+    void USART3_IRQHandler() {
+        static constexpr const UARTResource & Resource = BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG);
+        Resource.IRQHandler();
     }
 }

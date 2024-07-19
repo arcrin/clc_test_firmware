@@ -7,7 +7,7 @@ class BoardUART {
     public:
         static inline uint8_t DEBUG_RX_BUF[64];
 
-        static void Init() {}
+        static void Init();
 
     static constexpr UARTResource DEBUG_UART{{USART3_BASE, 0x0}, DEBUG_RX_BUF, sizeof(DEBUG_RX_BUF)};
 
@@ -16,20 +16,20 @@ class BoardUART {
         DEBUG, (DEBUG_UART),
     );
 
+
     // enum class UARTResource_t { DEBUG, }; 
-    // static constexpr SearchableRef<UARTResource> UARTResourceList[] { {"DEBUG", {(DEBUG_UART)}}, }; 
-    // static constexpr const UARTResource & GetUARTResource(UARTResource_t resource) { 
-    //     return UARTResourceList[(uint8_t)resource].getconst(); 
+    // static constexpr SearchableRef<UARTResource> UARTResourceList[] { 
+    //     {"DEBUG", {(DEBUG_UART)}}, 
+    // }; 
+    // static constexpr const UARTResource & GetUARTResource(UARTResource_t resource) {
+    //      return UARTResourceList[(uint8_t)resource].getconst(); 
     // } 
-    
-    // static constexpr const UARTResource * GetUARTResource(std::string_view Name) {
-    //      if (auto Index = Searchable::SearchPartialUnique(UARTResourceList, sizeof(UARTResourceList) / sizeof(UARTResourceList[0]), Name); Index >= 0) 
-    //      { 
+    // static constexpr const UARTResource * GetUARTResource(std::string_view Name) { 
+    //     if (auto Index = Searchable::SearchPartialUnique(UARTResourceList, sizeof(UARTResourceList) / sizeof(UARTResourceList[0]), Name); Index >= 0) { 
     //         return &UARTResourceList[Index].getconst(); 
     //     } 
-    //      return nullptr; 
+    //     return nullptr; 
     // } 
-    
     // static constexpr UARTResource_t GetUARTResourceIndex(std::string_view Name) { 
     //     return (UARTResource_t)Searchable::SearchPartialUnique(UARTResourceList, sizeof(UARTResourceList) / sizeof(UARTResourceList[0]), Name); 
     // }

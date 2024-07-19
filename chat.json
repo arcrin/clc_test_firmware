@@ -7188,6 +7188,626 @@
           }
         }
       ]
+    },
+    {
+      "message": {
+        "text": "@workspace /explain Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nstatic SHELLERR Handle(uint32_t &Error, bool &UseChecksum);\n```\n\n",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": true,
+                "isSecondary": true,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code"
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?"
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 162
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 7,
+              "endColumn": 1
+            },
+            "text": " Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nstatic SHELLERR Handle(uint32_t &Error, bool &UseChecksum);\n```\n\n",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The line of code you've provided is a declaration of a static member function named `Handle` within a C++ class, presumably named `ResourceHandler` given the file name [`ResourceHandler.h`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.h%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D \"c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\ResourceHandler.h\"). This function is designed to perform some kind of handling operation, which is not explicitly detailed by the name or the parameters alone but could involve processing or managing resources in a specific way, as suggested by the class name.\n\nThe function is declared to return a value of type `SHELLERR`. This type is likely an enumeration or a class that represents different error states or outcomes of the `Handle` operation. Using a specific type like `SHELLERR` for the return value, instead of a generic type like `int` or `bool`, allows for more expressive and meaningful error handling. It enables the caller of the function to understand and react to different outcomes of the handling operation more precisely.\n\nThe function takes two parameters by reference: [`uint32_t &Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\") and [`bool &UseChecksum`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\"). The use of references here indicates that the function intends to modify the arguments passed to it, reflecting changes back to the caller. This is a common pattern when a function needs to output more than one value or when the state of the passed arguments needs to be updated based on the operation performed by the function.\n\n- The first parameter, [`uint32_t &Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\"), is likely used to return an error code or status information related to the handling operation. By passing this parameter by reference, the function can set it to a specific value that indicates the nature of any error that occurred or provide additional status information about the operation's success.\n  \n- The second parameter, [`bool &UseChecksum`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FShellErr.h%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A5%2C%22character%22%3A0%7D%5D \"firmwareutil/resourceshell/ShellErr.h\"), suggests that the function's behavior might be influenced by whether checksums are to be used in the handling operation. This could involve verifying data integrity or similar tasks. The reference qualifier implies that this value might be updated during the function's execution, possibly to indicate whether a checksum was actually used or needed.\n\nThe `static` keyword indicates that this function can be called without creating an instance of the `ResourceHandler` class. This suggests that `Handle` does not operate on or modify the state of a `ResourceHandler` object but instead performs its operation in a stateless manner or operates on static class members or global state.\n\nIn summary, this function declaration outlines a static operation related to resource handling, which provides detailed feedback through both its return type and by modifying the values of passed reference parameters. The specific use of types and the static keyword hint at the design intentions behind this function within the broader context of the `ResourceHandler` class.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 2070,
+          "totalElapsed": 12703
+        },
+        "metadata": {
+          "modelMessageId": "019306fb-6e33-48bb-8b35-26b7c8dd5cc2",
+          "responseId": "92ca46fe-1aeb-43a7-b288-8ca34a06c83f",
+          "sessionId": "5b66a63a-18fb-4dc3-b573-4f752de5c4fe",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        }
+      },
+      "followups": [
+        {
+          "kind": "reply",
+          "agentId": "github.copilot.workspace",
+          "subCommand": "explain",
+          "message": "What are some common use cases for static member functions in C++?"
+        }
+      ],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": true,
+          "isSecondary": true,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code"
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?"
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\ResourceHandler.h",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/ResourceHandler.h",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/ResourceHandler.h",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 27,
+              "startColumn": 3,
+              "endLineNumber": 27,
+              "endColumn": 64
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "text": "@workspace /explain Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nError >>= 4;\n```\n\n",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": true,
+                "isSecondary": true,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code"
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?"
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 115
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 7,
+              "endColumn": 1
+            },
+            "text": " Write an explanation for the active selection as paragraphs of text.\n\n```cpp\nError >>= 4;\n```\n\n",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The line of code you've provided performs a bitwise right shift operation on the variable [`Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A146%2C%22character%22%3A10%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") and assigns the result back to [`Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A146%2C%22character%22%3A10%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\"). This operation is indicated by the `>>=` operator, which is a compound assignment operator that combines a right shift (`>>`) with assignment (`=`). The operation [`Error >>= 4;`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A146%2C%22character%22%3A10%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") effectively shifts the bits of the [`Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A146%2C%22character%22%3A10%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") variable 4 positions to the right.\n\nIn more detail, the bitwise right shift operator (`>>`) takes two operands: the left operand is the value to be shifted, and the right operand specifies the number of positions that the bits in the left operand should be shifted to the right. After the shift, the leftmost bits are filled with zeros in the case of unsigned types or with the sign bit (leftmost bit) in the case of signed types (this behavior for signed types is implementation-defined in C++ prior to C++20, and starting from C++20, it's well-defined as using the sign bit for filling). The `>>=` operator then assigns the result of this shift back to the left operand.\n\nThe effect of [`Error >>= 4;`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A146%2C%22character%22%3A10%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") is to divide the [`Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A146%2C%22character%22%3A10%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") variable by \\(2^4\\) or 16, assuming [`Error`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A146%2C%22character%22%3A10%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") is an unsigned type or a signed type with a non-negative value. This is because each shift to the right by one position halves the value of the variable, so shifting by 4 positions is equivalent to halving the value four times, which is the same as dividing by 16. This operation is often used in programming for efficient division by powers of two, for extracting specific bits from a value, or for implementing certain algorithms that require bit manipulation.\n\nIn the context of your project, this operation might be used for processing or modifying error codes, possibly to extract a specific portion of the error code for further analysis or handling. The choice of shifting by 4 bits suggests that the error codes have a structure or encoding that can be dissected or simplified by dividing them into smaller sections, each section possibly representing different types of information encoded within the error code.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1399,
+          "totalElapsed": 9864
+        },
+        "metadata": {
+          "modelMessageId": "5b525306-b019-4a0c-a1b7-5563ed416413",
+          "responseId": "bdfa6c3d-6476-4b6d-b6f0-d6aeb662907f",
+          "sessionId": "5b66a63a-18fb-4dc3-b573-4f752de5c4fe",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        }
+      },
+      "followups": [
+        {
+          "kind": "reply",
+          "agentId": "github.copilot.workspace",
+          "subCommand": "explain",
+          "message": "What are some common use cases for bitwise operations in C++?"
+        }
+      ],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": true,
+          "isSecondary": true,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code"
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?"
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\ResourceHandler.cpp",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/ResourceHandler.cpp",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/firmwareutil/resourceshell/ResourceHandler.cpp",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 163,
+              "startColumn": 4,
+              "endLineNumber": 163,
+              "endColumn": 16
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "text": "my compiler can not find reference to ResourceHandler::ShellTask(); but it appears my #include works",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 100
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 101
+            },
+            "text": "my compiler can not find reference to ResourceHandler::ShellTask(); but it appears my #include works",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "To resolve the issue where the compiler cannot find a reference to `ResourceHandler::ShellTask();` despite the `#include` directive appearing to work, follow these steps:\n\n1. **Verify Include Directives**: Ensure that the `#include` directive for the header file containing the declaration of `ResourceHandler` and its member function [`ShellTask`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A77%2C%22character%22%3A22%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") is correctly specified. The path should be relative to your project's include directories or an absolute path.\n\n2. **Check Namespace**: If `ResourceHandler` is within a namespace, ensure you are using the correct namespace or using a `using` directive for it.\n\n3. **Confirm Declaration**: Ensure that [`ShellTask`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A77%2C%22character%22%3A22%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") is declared as a public static member function of `ResourceHandler` in its class definition. If it's not static, you'll need an instance of `ResourceHandler` to call it.\n\n4. **Check for Typographical Errors**: Verify there are no typographical errors in the function name, class name, or include path.\n\n5. **Review the Linker Settings**: If the definition of [`ShellTask`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2FResourceHandler.cpp%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A77%2C%22character%22%3A22%7D%5D \"firmwareutil/resourceshell/ResourceHandler.cpp\") is in a separate compilation unit (i.e., a different `.cpp` file), ensure that this file is correctly compiled and linked with your [`main.cpp`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Fsrc%2Fmain.cpp%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D \"c:\\Projects\\Delta\\embedded\\clc_test_firmware\\src\\main.cpp\"). This might involve checking your project or makefile settings to ensure all relevant source files are included.\n\n6. **Check for Circular Dependencies**: If you have circular dependencies in your include files, it might prevent proper compilation. Ensure that you're not in a situation where file A includes file B, which in turn includes file A, either directly or indirectly.\n\n7. **Rebuild the Project**: Sometimes, stale build artifacts can cause issues. Try cleaning and rebuilding your entire project.\n\n8. **Compiler and IDE Settings**: Ensure that your compiler and IDE settings are correctly configured for your project, including paths to include directories and any necessary compiler flags.\n\n9. **Consult Documentation**: If `ResourceHandler::ShellTask` is part of a library, consult the library's documentation to ensure it's used correctly and that you're including the right headers.\n\n10. **Update or Reinstall Dependencies**: If `ResourceHandler` is part of an external library, ensure the library is correctly installed, and consider updating it to the latest version.\n\nIf after these steps the issue persists, it might be helpful to consult more specific resources or forums related to the compiler or IDE you're using, as there might be tool-specific considerations or bugs affecting your project.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1360,
+          "totalElapsed": 12038
+        },
+        "metadata": {
+          "modelMessageId": "86396abe-5067-4bf5-9247-9f6349e4d211",
+          "responseId": "5a55a44b-643c-4357-bb96-82a98fb43c9f",
+          "sessionId": "a910f3eb-5706-4b2e-9850-102128d8c907",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "followups": [
+        {
+          "kind": "reply",
+          "agentId": "github.copilot.default",
+          "message": "How can I troubleshoot and resolve compiler errors related to missing references in C++?"
+        }
+      ],
+      "isCanceled": false,
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\src\\main.cpp",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/src/main.cpp",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/src/main.cpp",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 10,
+              "startColumn": 5,
+              "endLineNumber": 10,
+              "endColumn": 34
+            }
+          }
+        }
+      ]
+    },
+    {
+      "message": {
+        "text": "I expected the highlighted line to include all cpp files from src and firmwareutil/resourceshell/ folder. But It didn't seem to include any file from the resourceshell dir",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 171
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 172
+            },
+            "text": "I expected the highlighted line to include all cpp files from src and firmwareutil/resourceshell/ folder. But It didn't seem to include any file from the resourceshell dir",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "The issue with the [`CMakeLists.txt`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2FCMakeLists.txt%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D \"c:\\Projects\\Delta\\embedded\\clc_test_firmware\\CMakeLists.txt\") snippet you've highlighted is likely due to a typographical error in the directory path. The path `fimrwareutil/resourceshell/*` seems to be misspelled. It should be `firmwareutil/resourceshell/*` if your intention is to include files from the [`firmwareutil/resourceshell/`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FProjects%2FDelta%2Fembedded%2Fclc_test_firmware%2Ffirmwareutil%2Fresourceshell%2F%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D \"c:\\Projects\\Delta\\embedded\\clc_test_firmware\\firmwareutil\\resourceshell\\\") directory. Here's the corrected snippet:\n\n```cmake\nfile(GLOB APP_FILES\n    src/*\n    firmwareutil/resourceshell/*\n)\n```\n\nEnsure that the corrected path accurately reflects the structure of your project's directories. After making this correction, CMake should be able to include all files from both the `src` directory and the `firmwareutil/resourceshell/` directory as expected. Remember to reconfigure your CMake project to apply these changes.",
+          "isTrusted": {
+            "enabledCommands": [
+              "_github.copilot.openRelativePath",
+              "_github.copilot.openSymbolInFile",
+              "_github.copilot.openSymbolFromReferences"
+            ]
+          },
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "result": {
+        "timings": {
+          "firstProgress": 1300,
+          "totalElapsed": 4028
+        },
+        "metadata": {
+          "modelMessageId": "7b39e485-833f-4401-a3a3-b2a5293c3288",
+          "responseId": "e27fcfe9-61e1-4ba5-987d-a410539f7e9f",
+          "sessionId": "a910f3eb-5706-4b2e-9850-102128d8c907",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "followups": [
+        {
+          "kind": "reply",
+          "agentId": "github.copilot.default",
+          "message": "How can I fix a \"undefined reference\" error in my C++ code?"
+        }
+      ],
+      "isCanceled": false,
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\Delta\\embedded\\clc_test_firmware\\CMakeLists.txt",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/Delta/embedded/clc_test_firmware/CMakeLists.txt",
+              "path": "/c:/Projects/Delta/embedded/clc_test_firmware/CMakeLists.txt",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 33,
+              "startColumn": 1,
+              "endLineNumber": 36,
+              "endColumn": 2
+            }
+          }
+        }
+      ]
     }
   ]
 }

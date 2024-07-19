@@ -14,15 +14,20 @@ class ResourceMap {
             GPIOResource, "",
             UARTResource, "",
         );
+        // Above macro expands to the following:
+        // static constexpr const ResourceEntry ResourceInfo[] { 
+        //     {"GPIOResource", GPIOResource::Init, GPIOResource::Handler, GPIOResource::Task, GPIOResource::CmdMap, (sizeof(GPIOResource::CmdMap) / sizeof(GPIOResource::CmdMap[0])), ""}, 
+        //     {"UARTResource", UARTResource::Init, UARTResource::Handler, UARTResource::Task, UARTResource::CmdMap, (sizeof(UARTResource::CmdMap) / sizeof(UARTResource::CmdMap[0])), ""}, 
+        // };
 
     static void putc(uint8_t c) {
        static constexpr const UARTResource & DebugUART = BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG);
        DebugUART.putc(c);   
     }
 
-    static void ngetc(uint8_t &c) {
+    static bool ngetc(uint8_t &c) {
         static constexpr const UARTResource & DebugUART = BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG);
-        DebugUART.ngetc(c);
+        return DebugUART.ngetc(c);
     }
     
 };

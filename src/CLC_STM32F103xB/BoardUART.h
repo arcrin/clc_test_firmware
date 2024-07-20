@@ -36,7 +36,7 @@ class BoardUART {
 
 
     static constexpr UARTConfig DEBUG_CONFIG {
-        9600, 
+        115200, 
         UARTConfig::PARITY::NONE, 
         UARTConfig::STOP::ONE, 
         {{GPIOB_BASE, 10}, GPIODriver::MODE::ALTERNATE}, 

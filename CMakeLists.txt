@@ -44,9 +44,13 @@ if(${DEBUG_OPTIMIZATION})
     set(OPTIMIZATION_FLAGS "-g3 -O0")
     set(LINKER_SCRIPT_PREFIX Debug_)
 else()
+    # set(OPTIMIZATION_FLAGS "-g3 -O3")
     set(OPTIMIZATION_FLAGS "-Os -flto")
     set(LINKER_SCRIPT_PREFIX "")
 endif()
+
+message(STATUS "OPTIMIZATION_FLAGS= ${OPTIMIZATION_FLAGS}")
+message(STATUS "LINKER_SCRIPT_PREFIX= ${LINKER_SCRIPT_PREFIX}")
 
 SET(COMMON_FLAGS "${OPTIMIZATION_FLAGS} -Wall -Wundef -Wdouble-promotion -Wno-unknown-pragmas -fstack-usage -Wstack-usage=1024 -g3 -mthumb -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wuninitialized -Wmissing-declarations -Wlogical-op -Wfloat-equal -MD -MP -MF \"$$(@:%.o=%.d)\" -MT\"$$(@:%.o=%.d)\" -MT\"$$(@:%.o=%.o)\"")
 SET(CMAKE_C_FLAGS "${COMMON_FLAGS}")

@@ -53,7 +53,11 @@
         "streambuf": "cpp",
         "cstring": "cpp",
         "ranges": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "vectors.h": "c",
+        "iomap.h": "c",
+        "stm32f1xx.h": "c",
+        "stm32f103xb.h": "c"
     },
     "C_Cpp.default.compilerPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe",
     "cmake.generator": "MinGW Makefiles",

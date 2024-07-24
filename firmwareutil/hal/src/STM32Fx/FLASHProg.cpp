@@ -9,7 +9,9 @@ void FLASHProg::Init() {
 	FLASH->KEYR = 0xCDEF89AB;
 
 	// Set PSIZE to 10 (32 bit)
+	#ifndef HAL_STM32F103xB
 	FLASH->CR = (FLASH->CR & ~FLASH_CR_PSIZE) | FLASH_CR_PSIZE_1;
+	#endif
 
 //	// Disable caches
 //	FLASH->ACR &= ~(FLASH_ACR_DCEN | FLASH_ACR_ICEN | FLASH_ACR_PRFTEN);
@@ -38,7 +40,14 @@ static bool Busy() {
 
 static uint32_t GetError() {
 	uint32_t Code = 0;
-
+	#ifdef HAL_STM32F103xB
+	if (FLASH->SR & FLASH_SR_PGERR) {
+		Code = 1;
+	} else if (FLASH->SR & FLASH_SR_WRPRTERR) {
+		Code = 2;
+	}
+	FLASH->SR |= FLASH_SR_PGERR | FLASH_SR_WRPRTERR;
+	#else
 	if (FLASH->SR & (1 << 8)) {
 		Code = 1;
 	} else if (FLASH->SR & FLASH_SR_PGSERR) {
@@ -53,6 +62,7 @@ static uint32_t GetError() {
 		Code = 6;
 	}
 	FLASH->SR |= (1 << 8) | FLASH_SR_PGSERR | FLASH_SR_PGPERR | FLASH_SR_PGAERR | FLASH_SR_WRPERR | (1 << 1);
+	#endif
 	return Code;
 }
 

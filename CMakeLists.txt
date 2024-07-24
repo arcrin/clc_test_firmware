@@ -25,7 +25,7 @@ add_compile_definitions(
 
 include_directories(
     src
-    firmwareutil/memoproglib
+    # firmwareutil/memproglib
     firmwareutil/resourceshell
 )
 
@@ -74,6 +74,7 @@ foreach(TARGET_DATA_STR ${TARGETS})
     set(HAL_CONFIG
         GPIO
         UART
+        # FLASHProg
     )
 
     include(${TARGET_NAME}.cmake)

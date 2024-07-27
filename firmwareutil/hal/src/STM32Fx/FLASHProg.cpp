@@ -69,14 +69,16 @@ static uint32_t GetError() {
 
 void FLASHProg::CMD_MASS_ERASE() {
 	if (LocalParam.Status == _MEMPROG_STATUS_START) {
+		#ifndef HAL_STM32F103xB
 		FLASH->CR = (FLASH->CR & ~FLASH_CR_PSIZE) | FLASH_CR_PSIZE_1;
-#ifdef HAL_STM32F427
+		#endif
+		#ifdef HAL_STM32F427
 		FLASH->CR |= FLASH_CR_MER | FLASH_CR_MER2;
-#elif defined(HAL_STM32F205)
+		#elif defined(HAL_STM32F205) || defined(HAL_STM32F103xB)
 		FLASH->CR |= FLASH_CR_MER;
-#else
-#error
-#endif
+		#else
+		#error
+		#endif
 		FLASH->CR |= FLASH_CR_STRT;
 		return;
 	}
@@ -86,13 +88,13 @@ void FLASHProg::CMD_MASS_ERASE() {
 	}
 
 	LocalParam.Code = GetError();
-#ifdef HAL_STM32F427
+	#ifdef HAL_STM32F427
 	FLASH->CR &= ~(FLASH_CR_MER | FLASH_CR_MER2);
-#elif defined(HAL_STM32F205)
+	#elif defined(HAL_STM32F205) || defined(HAL_STM32F103xB)
 	FLASH->CR &= ~(FLASH_CR_MER);
-#else
-#error
-#endif
+	#else
+	#error
+	#endif
 
 	if (LocalParam.Code) {
 		LocalParam.Status = MEMPROG_STATUS_ERR_OTHER;
@@ -102,15 +104,25 @@ void FLASHProg::CMD_MASS_ERASE() {
 }
 
 uint32_t FLASHProg::GetAlignment(uint32_t Address) {
+	#ifdef HAL_STM32F103xB
+	return 2;
+	#else
 	return 4;
+	#endif
 }
 
 uint32_t FLASHProg::PGM(uint32_t Destination, const uint8_t * Source) {
+	#ifndef HAL_STM32F103xB
 	FLASH->CR = (FLASH->CR & ~FLASH_CR_PSIZE) | FLASH_CR_PSIZE_1;
+	#endif
 	// Length need not be aligned. Unaligned bytes will be programmed individually
-
 	FLASH->CR |= FLASH_CR_PG;
+
+	#ifdef HAL_STM32F103xB
+	*((uint16_t *) Destination) = *((uint16_t *) Source);
+	#else
 	*((uint32_t *) Destination) = *((uint32_t *) Source);
+	#endif
 
 	while (Busy());
 

@@ -16,8 +16,7 @@ set(TARGETS
 )
 
 # NOTE: define F_CPU
-# I believe this is being used for systick related code. Disable for now and enble as needed
-# The clock speed of the STM32F103V8 is might be different
+# The clock speed of the STM32F103V8 might be different
 
 add_compile_definitions(
     F_CPU=8000000
@@ -25,7 +24,7 @@ add_compile_definitions(
 
 include_directories(
     src
-    # firmwareutil/memproglib
+    firmwareutil/memproglib
     firmwareutil/resourceshell
 )
 
@@ -38,7 +37,7 @@ file(GLOB APP_FILES
 message(STATUS "All source files ${APP_FILES}")
 
 # Compiler and linker flags
-SET(DEBUG_OPTIMIZATION true)
+SET(DEBUG_OPTIMIZATION false)
 #SET(TRACE_MALLOC true)
 if(${DEBUG_OPTIMIZATION})
     set(OPTIMIZATION_FLAGS "-g3 -O0")
@@ -74,8 +73,9 @@ foreach(TARGET_DATA_STR ${TARGETS})
     set(HAL_CONFIG
         GPIO
         UART
-        # FLASHProg
+        FLASHProg
+        SYSTICK
     )
-
+    message(STATUS "HAL_CONFIG= ${HAL_CONFIG}")
     include(${TARGET_NAME}.cmake)
 endforeach()

@@ -54,6 +54,19 @@
             "svdFile": "${workspaceRoot}/firmwareutil/hal/svd/STM32F103.svd",
             "preLaunchTask": "Build with CMake",
         },
+        
+        {
+            "name": "CLC Debug Attach - work",
+            "type": "cortex-debug",
+            "servertype": "external",
+            "request": "attach",
+            "executable": "./build/CLC_STM32F103xB/CLC_STM32F103xB.elf",
+            "gdbTarget": "localhost:3334",
+            "cwd": "${workspaceRoot}",
+            "svdFile": "${workspaceRoot}/firmwareutil/hal/svd/STM32F103.svd",
+            "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+
+        },
 
         {
             "name": "CLC Debug - home",

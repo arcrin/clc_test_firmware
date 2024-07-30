@@ -3,6 +3,7 @@
 #include "SYSTICK.h"
 #include "BoardUART.h"
 #include "BoardGPIO.h"
+#include "AFIODriver.h"
 #include "util.h"
 #include "Programming.h"
 

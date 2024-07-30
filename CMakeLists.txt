@@ -72,6 +72,7 @@ foreach(TARGET_DATA_STR ${TARGETS})
 
     set(HAL_CONFIG
         GPIO
+        AFIO
         UART
         FLASHProg
         SYSTICK

@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <string.h>
 
 #define SRAM_START  0x20000000U
 #define SRAM_SIZE   (20 * 1024) // 20KB
@@ -14,20 +15,42 @@ extern uint32_t _sbss; // start of bss section
 extern uint32_t _ebss; // end of bss section
 extern uint32_t uwTick; 
 
+extern void (*__preinit_array_start []) (void);
+extern void (*__preinit_array_end []) (void);
+extern void (*__init_array_start []) (void);
+extern void (*__init_array_end []) (void);
+
 int main(void); 
 
+static void __libc_init_array(void);
+static void __libc_init_array(void) {
+	size_t count;
+	size_t i;
+
+	count = __preinit_array_end - __preinit_array_start;
+	for (i = 0; i < count; i++) {
+		__preinit_array_start[i]();
+	}
+
+	_init();
+
+	count = __init_array_end - __init_array_start;
+	for (i = 0; i < count; i++) {
+		__init_array_start[i]();
+	}
+}
 void Default_Handler(void);
 
 void Reset_Handler(void);
 __attribute__((weak, alias("Default_Handler"))) void NMI_Handler(void);
-void HardFault_Handler(void);
+__attribute__((weak, alias("Default_Handler"))) void HardFault_Handler(void);
 __attribute__((weak, alias("Default_Handler"))) void MemManage_Handler(void);
 __attribute__((weak, alias("Default_Handler"))) void BusFault_Handler(void);
 __attribute__((weak, alias("Default_Handler"))) void UsageFault_Handler(void);
 __attribute__((weak, alias("Default_Handler"))) void SVC_Handler(void);      
 __attribute__((weak, alias("Default_Handler"))) void DebugMon_Handler(void); 
 __attribute__((weak, alias("Default_Handler"))) void PendSV_Handler(void);   
-__attribute__((weak, alias("Default_Handler"))) void SysTick_Handler(void);  
+void SysTick_IRQHandler(void);  
 __attribute__((weak, alias("Default_Handler"))) void WWDG_IRQHandler(void);  
 __attribute__((weak, alias("Default_Handler"))) void PVD_IRQHandler(void);   
 __attribute__((weak, alias("Default_Handler"))) void TAMPER_IRQHandler(void);
@@ -67,7 +90,7 @@ __attribute__((weak, alias("Default_Handler"))) void SPI1_IRQHandler(void);
 __attribute__((weak, alias("Default_Handler"))) void SPI2_IRQHandler(void);     
 __attribute__((weak, alias("Default_Handler"))) void USART1_IRQHandler(void);   
 __attribute__((weak, alias("Default_Handler"))) void USART2_IRQHandler(void);   
-__attribute__((weak, alias("Default_Handler"))) void USART3_IRQHandler(void);   
+void USART3_IRQHandler(void);   
 __attribute__((weak, alias("Default_Handler"))) void EXTI15_10_IRQHandler(void); 
 __attribute__((weak, alias("Default_Handler"))) void RTC_Alarm_IRQHandler(void); 
 __attribute__((weak, alias("Default_Handler"))) void USBWakeUp_IRQHandler(void); 
@@ -90,9 +113,9 @@ __attribute__((weak, alias("Default_Handler"))) void DMA2_Channel3_IRQHandler(vo
 __attribute__((weak, alias("Default_Handler"))) void DMA2_Channel4_5_IRQHandler(void); 
 
 /* Vector Table for STM32F103V8 */
-const uint32_t vectorTable[]  __attribute__((section(".isr_vector"))) = {
+const uint32_t vectorTable[] __attribute__((section(".isr_vector"))) = {
     STACK_START,                  /* Stack pointer */
-    (uint32_t) Reset_Handler,     /* Reset handler */
+    (uint32_t) &Reset_Handler,     /* Reset handler */
     (uint32_t) NMI_Handler,       /* NMI handler */
     (uint32_t) HardFault_Handler, /* Hard fault handler */
     (uint32_t) MemManage_Handler, /* MPU fault handler */
@@ -106,7 +129,7 @@ const uint32_t vectorTable[]  __attribute__((section(".isr_vector"))) = {
     (uint32_t) DebugMon_Handler,  /* Debug monitor handler */
     0,                            /* Reserved */
     (uint32_t) PendSV_Handler,    /* PendSV handler */
-    (uint32_t) SysTick_Handler,   /* SysTick handler */
+    (uint32_t) SysTick_IRQHandler,   /* SysTick handler */
     /* External Interrupts */
     (uint32_t) WWDG_IRQHandler,    /* Window Watchdog */
     (uint32_t) PVD_IRQHandler,     /* PVD through EXTI Line detect */
@@ -175,11 +198,6 @@ void Default_Handler(void)
     while(1);
 }   
 
-void HardFault_Handler(void)
-{
-    while(1);
-}
-
 void Reset_Handler(void)
 {
     // copy .data section to SRAM
@@ -199,6 +217,8 @@ void Reset_Handler(void)
     {
         *pDst++ = 0;
     }
+
+    __libc_init_array();
 
     main();
 }

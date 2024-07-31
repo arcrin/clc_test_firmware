@@ -25,7 +25,29 @@ class BoardGPIO {
             SW302_PB, ({GPIOC_BASE, 11}, GPIODriver::MODE::INPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::UP),
             SW313_PB, ({GPIOC_BASE, 12}, GPIODriver::MODE::INPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::UP),
             SW303_PB, ({GPIOC_BASE, 13}, GPIODriver::MODE::INPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::UP),
-            
+            CAN_ERR, ({GPIOE_BASE, 2}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            CAN_RX, ({GPIOA_BASE, 11}, GPIODriver::MODE::INPUT, 0, true, false, GPIODriver::TYPE::OPEN_DRAIN, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            CAN_RX_DEBUG, ({GPIOA_BASE, 11}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SYS_GREEN, ({GPIOE_BASE, 4}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            SYS_RED, ({GPIOE_BASE, 5}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYA_FB1, ({GPIOA_BASE, 4}, GPIODriver::MODE::INPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::DOWN),
+            RLYB_FB1, ({GPIOA_BASE, 5}, GPIODriver::MODE::INPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::DOWN),
+            RLYA_FB2, ({GPIOA_BASE, 6}, GPIODriver::MODE::INPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::DOWN),
+            RLYB_FB2, ({GPIOA_BASE, 7}, GPIODriver::MODE::INPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::DOWN),
+            RLYA_FB3, ({GPIOC_BASE, 0}, GPIODriver::MODE::INPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::DOWN),
+            RLYB_FB3, ({GPIOC_BASE, 1}, GPIODriver::MODE::INPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::DOWN),
+            RLYA_ON1, ({GPIOD_BASE, 0}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYA_OFF1, ({GPIOD_BASE, 1}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYB_ON1, ({GPIOD_BASE, 2}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYB_OFF1, ({GPIOD_BASE, 3}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYA_ON2, ({GPIOD_BASE, 4}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYA_OFF2, ({GPIOD_BASE, 5}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYB_ON2, ({GPIOD_BASE, 6}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYB_OFF2, ({GPIOD_BASE, 7}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYA_ON3, ({GPIOD_BASE, 8}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYA_OFF3, ({GPIOD_BASE, 9}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYB_ON3, ({GPIOD_BASE, 10}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            RLYB_OFF3, ({GPIOD_BASE, 11}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE)
         );
 
     //     enum class GPIODriver_t{

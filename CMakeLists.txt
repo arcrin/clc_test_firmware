@@ -15,6 +15,25 @@ set(TARGETS
     CLC:STM32F103xB
 )
 
+# Compiler and linker flags
+SET(DEBUG_OPTIMIZATION true)
+#SET(TRACE_MALLOC true)
+if(${DEBUG_OPTIMIZATION})
+    set(OPTIMIZATION_FLAGS "-g3 -O0")
+    set(LINKER_SCRIPT_PREFIX Debug_)
+    set(STARTUP_SCRIPT_PREFIX Debug_)
+    set(EXCLUDE_FILES
+        firmwareutil/hal/src/STM32F103xB/vectors.c
+        firmwareutil/hal/src/STM32F103xB/vectors.h
+    )
+    set_source_files_properties(${EXCLUDE_FILES} PROPERTIES HEADER_FILE_ONLY TRUE)
+else()
+    # set(OPTIMIZATION_FLAGS "-g3 -O3")
+    set(OPTIMIZATION_FLAGS "-Os -flto")
+    set(LINKER_SCRIPT_PREFIX "")
+    set(STARTUP_SCRIPT_PREFIX "")
+endif()
+
 # NOTE: define F_CPU
 # The clock speed of the STM32F103V8 might be different
 
@@ -31,22 +50,13 @@ include_directories(
 # Collect the application source files
 file(GLOB APP_FILES
     src/*                           
+    src/${STARTUP_SCRIPT_PREFIX}startup_script/*
     firmwareutil/resourceshell/*    
 )
 
 message(STATUS "All source files ${APP_FILES}")
 
-# Compiler and linker flags
-SET(DEBUG_OPTIMIZATION false)
-#SET(TRACE_MALLOC true)
-if(${DEBUG_OPTIMIZATION})
-    set(OPTIMIZATION_FLAGS "-g3 -O0")
-    set(LINKER_SCRIPT_PREFIX Debug_)
-else()
-    # set(OPTIMIZATION_FLAGS "-g3 -O3")
-    set(OPTIMIZATION_FLAGS "-Os -flto")
-    set(LINKER_SCRIPT_PREFIX "")
-endif()
+
 
 message(STATUS "OPTIMIZATION_FLAGS= ${OPTIMIZATION_FLAGS}")
 message(STATUS "LINKER_SCRIPT_PREFIX= ${LINKER_SCRIPT_PREFIX}")

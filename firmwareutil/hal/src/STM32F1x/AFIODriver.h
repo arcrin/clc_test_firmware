@@ -3,16 +3,18 @@
 
 class AFIODriver {
     public:
-        enum class PERIPHERAL : uint8_t {
+        enum class PERIPHERAL_MAP : uint8_t {
             CAN = 13,
         };
         constexpr AFIODriver(
-            PERIPHERAL peripheral, 
+            PERIPHERAL_MAP peripheral, 
             uint8_t remap_value) : 
             peripheral(peripheral), 
             remap_value(remap_value) {}
         AFIODriver() =  delete;
         constexpr ~AFIODriver() = default;
+
+        static void DriverInit();
 
         /// @brief Remap peripheral based on the settings provided in the constructor
         void configure() const;
@@ -22,6 +24,6 @@ class AFIODriver {
 
     private:
         AFIO_TypeDef * const afio() const {return reinterpret_cast<AFIO_TypeDef *>(AFIO_BASE);};
-        PERIPHERAL peripheral;
+        PERIPHERAL_MAP peripheral;
         uint8_t remap_value;
 };

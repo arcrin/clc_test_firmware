@@ -2,6 +2,7 @@
 #include "ResourceEntry.h"
 #include "GPIOResource.h"
 #include "UARTResource.h"
+#include "AFIOResource.h"
 #include "BoardUART.h"
 
 class ResourceMap {
@@ -13,6 +14,7 @@ class ResourceMap {
         RESOURCE_MAP(
             GPIOResource, "",
             UARTResource, "",
+            AFIOResource, "",   
         );
         // Above macro expands to the following:
         // static constexpr const ResourceEntry ResourceInfo[] { 

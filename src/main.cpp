@@ -11,11 +11,11 @@ int main() {
     __disable_irq();
     
     SYSTICK::DriverInit();
-    // ResourceHandler::Init();
+    ResourceHandler::Init();
     Programming::Init();
 
     __enable_irq();
-    
+
     BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG).puts("CLC connected.\n\r", 16);
     while(1){
         ResourceHandler::ShellTask();

@@ -24,6 +24,8 @@ public:
 		static_assert(std::is_base_of_v<Searchable, T>);
 		return SearchPartialUnique_impl((void *) Map, sizeof(T), Length, Term);
 	}
+	
+	std::string_view getSearchableName() const { return SearchableName; }
 
 private:
 	const std::string_view SearchableName;

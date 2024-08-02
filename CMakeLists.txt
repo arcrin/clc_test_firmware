@@ -16,7 +16,7 @@ set(TARGETS
 )
 
 # Compiler and linker flags
-SET(DEBUG_OPTIMIZATION true)
+SET(DEBUG_OPTIMIZATION false)
 #SET(TRACE_MALLOC true)
 if(${DEBUG_OPTIMIZATION})
     set(OPTIMIZATION_FLAGS "-g3 -O0")

@@ -15,6 +15,9 @@ private:
 			{ADC1_BASE, {RCC_APB2ENR_ADC1EN_Pos}},
 			{ADC2_BASE, {RCC_APB2ENR_ADC2EN_Pos}},
 			{ADC3_BASE, {RCC_APB2ENR_ADC3EN_Pos}},
+#elif defined(HAL_STM32F103xB)
+			{ADC1_BASE, {RCC_APB2ENR_ADC1EN_Pos}},
+			{ADC2_BASE, {RCC_APB2ENR_ADC2EN_Pos}},
 #else
 #error
 #endif

@@ -84,6 +84,7 @@ foreach(TARGET_DATA_STR ${TARGETS})
         GPIO
         AFIO
         ADC
+        SPI
         UART
         FLASHProg
         SYSTICK

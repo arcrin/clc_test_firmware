@@ -88,6 +88,7 @@ foreach(TARGET_DATA_STR ${TARGETS})
         UART
         FLASHProg
         SYSTICK
+        CAN
     )
     message(STATUS "HAL_CONFIG= ${HAL_CONFIG}")
     include(${TARGET_NAME}.cmake)

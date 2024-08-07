@@ -18,9 +18,9 @@ class BoardSPI {
         STATIC_VALS(
             SPIConfig,
             EEPROM, (1000000,
-                     {{GPIOB_BASE, 13}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::HIGH},
+                     {{GPIOB_BASE, 13}, GPIODriver::MODE::ALTERNATE, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::HIGH},
                      {{GPIOB_BASE, 14}, GPIODriver::MODE::INPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::HIGH},
-                     {{GPIOB_BASE, 15}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::HIGH},
+                     {{GPIOB_BASE, 15}, GPIODriver::MODE::ALTERNATE, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::HIGH},
                      false, 
                      false), // clock
         );
@@ -28,7 +28,8 @@ class BoardSPI {
         static inline SPIDevice EEPROM_DEVICE {
                                                 GetSPIResource(SPIResource_t::SPI_EEPROM), 
                                                 GetSPIConfig(SPIConfig_t::EEPROM), 
-                                                {{GPIOB_BASE, 12}, GPIODriver::MODE::ALTERNATE, 0, false, false, GPIODriver::TYPE::OPEN_DRAIN, GPIODriver::SPEED::HIGH}
+                                                // Apparently the NSS pin has to be in OUTPUT mode, I thoguht it should be ALTERNATE mode
+                                                {{GPIOB_BASE, 12}, GPIODriver::MODE::OUTPUT, 0, true, false, GPIODriver::TYPE::OPEN_DRAIN, GPIODriver::SPEED::HIGH}
                                                 };
         STATIC_REFS(
             SPIDevice, 

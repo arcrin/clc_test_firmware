@@ -8,10 +8,8 @@ class CANDriver {
 public:
 	/// Create a CAN instance
 	/// \param hal Processor specific information about the CAN peripheral
-	/// \param TX IO pin to use for TX. Must be constructed with the appropriate alternate function
-	/// \param RX IO pin to use for RX. Must be constructed with the appropriate alternate function
-	constexpr CANDriver(CANHAL hal, const GPIODriver && TX, const GPIODriver && RX) :
-		hal(hal), TX(std::move(TX)), RX(std::move(RX))
+	constexpr CANDriver(const CANHAL hal) :
+		hal(hal)
 	{}
 	CANDriver() = delete;
 	~CANDriver() = default;
@@ -44,8 +42,9 @@ public:
 	/// Disable the transceiver
 	void Disable() const;
 
+	/// Flush the RX and TX buffers
+	void Flush() const;
+
 private:
 	const CANHAL hal;
-	const GPIODriver TX;
-	const GPIODriver RX;
 };

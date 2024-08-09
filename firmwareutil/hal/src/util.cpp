@@ -28,8 +28,8 @@ void _delay_us(uint32_t us) {
 	us *= 27;
 #elif F_CPU==120000000
 	us *= 20;
-#elif F_CPU==8000000
-	us *= 8;
+#elif F_CPU==72000000
+	us *= 11;
 #else
 #error "_delay_us not implemented for this HAL"
 #endif

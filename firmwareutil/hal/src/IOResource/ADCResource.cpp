@@ -25,6 +25,18 @@ CommandHandler(ADCResource::Handler) {
             Parser::DecStringFromNumber(Value, Output);
             return SHELLERR::OK;
         }
+        case CONF: {
+            const ADCResource * Channel;
+            if (!NumArgs) {
+                return SHELLERR::OK;
+            }
+            Channel = BoardADC::GetADCResource(Args[0]);
+            if (!Channel) {
+                return SHELLERR::ARGUMENT;
+            }
+            Channel->configure();
+            return SHELLERR::OK;
+        }
     }
     return SHELLERR::IMPLEMENTATION;
 }

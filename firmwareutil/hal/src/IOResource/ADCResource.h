@@ -10,5 +10,6 @@ class ADCResource : public ADCDriver, public IOResource {
 
         CMD_MAP(
             R, "<channel name>. Read ADC channel",
+            CONF, "<channel name>. (Re-)configure ADC channel",
         );
 };

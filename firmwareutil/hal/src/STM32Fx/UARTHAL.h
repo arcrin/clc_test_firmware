@@ -23,7 +23,7 @@ private:
 #ifdef HAL_STM32F103xB
 			{USART1_BASE, {offsetof(RCC_TypeDef, APB2ENR), RCC_APB2ENR_USART1EN_Pos, 1, USART1_IRQn, offsetof(AFIO_TypeDef, MAPR), 2, 1}},
 			{USART2_BASE, {offsetof(RCC_TypeDef, APB1ENR), RCC_APB1ENR_USART2EN_Pos, 2, USART2_IRQn, offsetof(AFIO_TypeDef, MAPR), 3, 1}},
-			{USART3_BASE, {offsetof(RCC_TypeDef, APB1ENR), RCC_APB1ENR_USART3EN_Pos, 1, USART3_IRQn, offsetof(AFIO_TypeDef, MAPR), 4, 3}},
+			{USART3_BASE, {offsetof(RCC_TypeDef, APB1ENR), RCC_APB1ENR_USART3EN_Pos, 2, USART3_IRQn, offsetof(AFIO_TypeDef, MAPR), 4, 3}},
 #elif defined(HAL_STM32F427)
 			{USART1_BASE, {offsetof(RCC_TypeDef, APB2ENR), RCC_APB2ENR_USART1EN_Pos, 2, USART1_IRQn}},
 			{USART2_BASE, {offsetof(RCC_TypeDef, APB1ENR), RCC_APB1ENR_USART2EN_Pos, 4, USART2_IRQn}},

@@ -16,7 +16,7 @@ set(TARGETS
 )
 
 # Compiler and linker flags
-SET(DEBUG_OPTIMIZATION true)
+SET(DEBUG_OPTIMIZATION TRUE)
 #SET(TRACE_MALLOC true)
 if(${DEBUG_OPTIMIZATION})
     set(OPTIMIZATION_FLAGS "-g3 -O0")
@@ -38,7 +38,7 @@ endif()
 # The clock speed of the STM32F103V8 might be different
 
 add_compile_definitions(
-    F_CPU=8000000
+    F_CPU=72000000
 )
 
 include_directories(

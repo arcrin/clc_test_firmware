@@ -5,6 +5,7 @@
 #include "AFIOResource.h"
 #include "ADCResource.h"
 #include "SPIResource.h"
+#include "CANResource.h"
 #include "BoardUART.h"
 
 class ResourceMap {
@@ -19,6 +20,7 @@ class ResourceMap {
             AFIOResource, "",   
             ADCResource, "",    
             SPIResource, "",
+            CANResource, ""
         );
         // Above macro expands to the following:
         // static constexpr const ResourceEntry ResourceInfo[] { 

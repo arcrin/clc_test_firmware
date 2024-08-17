@@ -92,14 +92,14 @@ class BoardGPIO {
             RMS6_SWB_ON3, ({GPIOD_BASE, 13}, GPIODriver::MODE::INPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
             RMS6_SWB_OFF3, ({GPIOD_BASE, 12}, GPIODriver::MODE::INPUT, 0, true, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
 
-            GSM8_SWA_PILOT1, ({GPIOA_BASE, 0}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            GSM8_SWB_PILOT1, ({GPIOA_BASE, 1}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            GSM8_SWA_PILOT2, ({GPIOA_BASE, 2}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            GSM8_SWB_PILOT2, ({GPIOA_BASE, 3}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            GSM8_SWA_PILOT3, ({GPIOA_BASE, 8}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            GSM8_SWB_PILOT3, ({GPIOA_BASE, 9}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            GSM8_SWA_PILOT4, ({GPIOA_BASE, 7}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
-            GSM8_SWB_PILOT4, ({GPIOA_BASE, 6}, GPIODriver::MODE::OUTPUT, 0, true, true, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWA_PILOT1, ({GPIOA_BASE, 0}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWB_PILOT1, ({GPIOA_BASE, 1}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWA_PILOT2, ({GPIOA_BASE, 2}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWB_PILOT2, ({GPIOA_BASE, 3}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWA_PILOT3, ({GPIOA_BASE, 8}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWB_PILOT3, ({GPIOA_BASE, 9}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWA_PILOT4, ({GPIOA_BASE, 7}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
+            GSM8_SWB_PILOT4, ({GPIOA_BASE, 6}, GPIODriver::MODE::OUTPUT, 0, false, false, GPIODriver::TYPE::PUSH_PULL, GPIODriver::SPEED::MEDIUM, GPIODriver::PULL::NONE),
         );
 
     //     enum class GPIODriver_t{

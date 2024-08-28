@@ -50,7 +50,7 @@ int main() {
     BoardUART::GetUARTResource(BoardUART::UARTResource_t::DEBUG).puts("CLC connected.\n\r", 16);
     while(1){
         ResourceHandler::ShellTask();
-        // Programming::Task();
+        Programming::Task();
     }
 }
 

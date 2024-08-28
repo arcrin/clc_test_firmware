@@ -33,7 +33,7 @@ void CANDriver::configure() const {
                      | (1 << CAN_BTR_SJW_Pos);
 
     // Loopback mode for testing
-    hal.can()->BTR |= CAN_BTR_LBKM;
+    // hal.can()->BTR |= CAN_BTR_LBKM;
 
     hal.can()->FMR = CAN_FMR_FINIT;
     hal.can()->FM1R &= 0;
